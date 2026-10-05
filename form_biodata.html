@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Diri</title>
+
+<style>
+
+body {
+font-family: Arial, sans-serif;
+background-color: #eeeeee;
+margin: 0;
+padding: 40px 15px;
+}
+
+.keterangan {
+text-align: center;
+color: #777;
+font-size: 14px;
+margin-top: -15px;
+margin-bottom: 25px;
+}
+
+.container {
+width: 500px;
+max-width: 100%;
+margin: auto;
+background-color: white;
+padding: 25px;
+border-radius: 10px;
+border-top: 5px solid #4f6d8a;
+}
+
+h1 {
+text-align: center;
+color: #333;
+font-size: 24px;
+margin-bottom: 25px;
+}
+
+label {
+display: block;
+margin-top: 12px;
+margin-bottom: 6px;
+color: #444;
+font-weight: bold;
+}
+
+input,select,textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #bbb;
+border-radius: 5px;
+font-size: 14px;
+box-sizing: border-box;
+}
+
+textarea {
+width: 100%;
+height: 70px;
+padding: 10px;
+border: 1px solid #bbb;
+border-radius: 5px;
+font-size: 14px;
+font-family: Arial,sans-serif;
+box-sizing: border-box;
+resize: none;
+}
+
+input:focus,select:focus {
+outline: none;
+border-color: #4f6d8a;
+}
+
+.jenis-kelamin {
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+margin-top: 8px;
+}
+
+.jenis-kelamin label {
+margin: 0;
+font-weight: normal;
+}
+
+.jenis-kelamin input {
+width: auto;
+}
+
+button {
+width: 100%;
+padding: 11px;
+margin-top: 22px;
+border: none;
+border-radius: 5px;
+background-color: #4f6d8a;
+color: white;
+font-size: 15px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #405a72;
+}
+
+#halamanHasil {
+display: none;
+}
+
+.hasil-data {
+margin-top: 10px;
+}
+
+.hasil-data p {
+padding: 10px 5px;
+margin: 0;
+border-bottom: 1px solid #ddd;
+}
+
+.hasil-data strong {
+display: inline-block;
+width: 150px;
+color: #444;
+}
+
+.kembali {
+background-color: white;
+color: #4f6d8a;
+border: 1px solid #4f6d8a;
+}
+
+.kembali:hover {
+background-color: #f2f5f7;
+}
+    
+</style>
+</head>
+
+<body>
+    <div class="container">
+    <div id="halamanForm">
+        <h1>BIODATA DIRI</h1>
+        <p class="keterangan">
+        Silakan isi data diri dengan lengkap dan benar !!
+        </p>
+        <form id="formBiodata">
+
+            <label>Nama Lengkap:</label>
+            <input type="text" id="nama" placeholder="Masukkan nama" required>
+
+            <label>Alamat:</label>
+            <textarea id="alamat" placeholder="Masukkan alamat" required></textarea>
+
+            <label>Jurusan:</label>
+            <select id="jurusan" required>
+                <option value="" disabled selected>Pilih jurusan</option>
+                <option>RPL</option>
+                <option>TKJ</option>
+                <option>TEI</option>
+                <option>TKR</option>
+                <option>TBSM</option>
+            </select>
+
+            <label>Jenis Kelamin:</label>
+
+            <div class="jenis-kelamin">
+                <label>
+                <input type="radio" name="gender" value="Laki-laki" required>
+                Laki-laki
+                </label>
+
+                <label>
+                <input type="radio" name="gender" value="Perempuan">
+                Perempuan
+                </label>
+
+                <label>
+                <input type="radio" name="gender" value="Boti">
+                Boti
+                </label>
+            </div>
+
+            <label>Tinggi Badan (cm):</label>
+            <input
+            type="text"
+            id="tinggi"
+            placeholder="tinggi badan"
+            maxlength="3"
+            inputmode="numeric"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+            required>
+            
+            <label>Berat Badan (kg):</label>
+            <input
+            type="text"
+            id="berat"
+            placeholder="berat badan"
+            maxlength="3"
+            inputmode="numeric"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+            required
+            >
+
+            <label>Hobi:</label>
+            <input type="text" id="hobi" placeholder="Masukkan hobi" required>
+
+            <label>No. HP:</label>
+            <input
+            type="text"
+            id="nohp"
+            placeholder="08xxxxxxxxxx"
+            maxlength="13"
+            inputmode="numeric"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+            required
+            >
+            <button type="submit">Simpan</button>
+        </form>
+    </div>
+
+<script>
+
+const form = document.getElementById("formBiodata");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const gender = document.querySelector(
+  'input[name="gender"]:checked'
+  ).value;
+
+const data = {
+  nama: document.getElementById("nama").value,
+  alamat: document.getElementById("alamat").value,
+  jurusan: document.getElementById("jurusan").value,
+  gender: gender,
+  tinggi: document.getElementById("tinggi").value,
+  berat: document.getElementById("berat").value,
+  hobi: document.getElementById("hobi").value,
+  nohp: document.getElementById("nohp").value
+};
+
+localStorage.setItem("biodata", JSON.stringify(data));
+window.location.href = "hasil_biodata.html";
+});
+
+const dataTersimpan = JSON.parse(localStorage.getItem("biodata"));
+
+    if (dataTersimpan) {
+        document.getElementById("nama").value = dataTersimpan.nama;
+        document.getElementById("alamat").value = dataTersimpan.alamat;
+        document.getElementById("jurusan").value = dataTersimpan.jurusan;
+        document.getElementById("tinggi").value = dataTersimpan.tinggi;
+        document.getElementById("berat").value = dataTersimpan.berat;
+        document.getElementById("hobi").value = dataTersimpan.hobi;
+        document.getElementById("nohp").value = dataTersimpan.nohp;
+
+        const gender = document.querySelector(
+            'input[name="gender"][value="' + dataTersimpan.gender + '"]'
+        );
+
+        if (gender) {
+            gender.checked = true;
+        }
+    }
+    
+</script>
+
+</body>
+</html>

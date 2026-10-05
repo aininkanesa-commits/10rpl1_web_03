@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Biodata</title>
+
+<style>
+
+body {
+font-family: Arial, sans-serif;
+background: #eeeeee;
+margin: 0;
+padding: 30px 15px;
+}
+
+.container {
+max-width: 500px;
+width: 100%;
+margin: auto;
+background: white;
+padding: 25px;
+box-sizing: border-box;
+border-top: 5px solid #4f6d8a;
+}
+
+h1 {
+text-align: center;
+}
+
+.hasil-data p {
+margin-bottom: 15px;
+line-height: 1.5;
+}
+
+#hasilAlamat {
+white-space: pre-line;
+overflow-wrap: anywhere;
+word-break: break-word;
+}
+
+button {
+width: 100%;
+padding: 11px;
+background: #4f6d8a;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+    
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Data Berhasil Disimpan</h1>
+    <div class="hasil-data">
+
+        <p>
+        <strong>Nama Lengkap</strong> :
+        <span id="hasilNama"></span>
+        </p>
+
+        <p>
+        <strong>Alamat</strong> :
+        <span id="hasilAlamat"></span>
+        </p>
+
+        <p>
+        <strong>Jurusan</strong> :
+        <span id="hasilJurusan"></span>
+        </p>
+
+        <p>
+        <strong>Jenis Kelamin</strong> :
+        <span id="hasilGender"></span>
+        </p>
+
+        <p>
+        <strong>Tinggi Badan</strong> :
+        <span id="hasilTinggi"></span> cm
+        </p>
+
+        <p>
+        <strong>Berat Badan</strong> :
+        <span id="hasilBerat"></span> kg
+        </p>
+
+        <p>
+        <strong>Hobi</strong> :
+        <span id="hasilHobi"></span>
+        </p>
+
+        <p>
+        <strong>No. HP</strong> :
+        <span id="hasilNohp"></span>
+        </p>
+
+    </div>
+    <button onclick="kembaliKeForm()">
+    Kembali ke form
+    </button>
+</div>
+
+<script>
+
+const data = JSON.parse(localStorage.getItem("biodata"));
+
+document.getElementById("hasilNama").textContent = data.nama;
+document.getElementById("hasilAlamat").textContent = data.alamat;
+document.getElementById("hasilJurusan").textContent = data.jurusan;
+document.getElementById("hasilGender").textContent = data.gender;
+document.getElementById("hasilTinggi").textContent = data.tinggi;
+document.getElementById("hasilBerat").textContent = data.berat;
+document.getElementById("hasilHobi").textContent = data.hobi;
+document.getElementById("hasilNohp").textContent = data.nohp;
+
+function kembaliKeForm() {
+window.location.href = "form_biodata.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+   <style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    
+}
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: aqua;
+}
+th:nth-child(even) {
+  background-color: aqua;
+}
+
+.status-bawah {
+  text-align: center;
+  background-color: aliceblue;
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Data Biodata Siswa PPLG</h2>
+
+<table>
+  <tr>
+    <th>Field/Atribut</th>
+    <th>Keterangan/Hasil Input</th>
+  </tr>
+  
+  <tr>
+    <td>Nama:</td>
+    <td>Ainin Elok Rahmadani</td>
+  </tr>
+  
+  <tr>
+    <td>Alamat:</td>
+    <td>JL.Kitrunowongso RT 4 RW 1 Desa Ternyang </td>
+  </tr>
+ 
+  <tr>
+    <td>Jurusan:</td>
+    <td>Rekayasa Perangkat Lunak (RPL)</td>
+  </tr>
+  
+  <tr>
+    <td>Jenis Kelamin:</td>
+    <td>Perempuan</td>
+  </tr>
+  
+  <tr>
+    <td>Tinggi Badan (cm):</td>
+    <td>160 cm</td>
+  </tr>
+  
+  <tr>
+    <td>Berat Badan (kg):</td>
+    <td>53 kg</td>
+  </tr>
+
+  <tr>
+    <td>Hobi:</td>
+    <td>Main Game</td>
+  </tr>
+
+  <tr>
+    <td>No.HP:</td>
+    <td>0812-3238-1281</td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="status-bawah">Status: Data berhasil divalidasi dan direkap kedalam tabel</td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+
+
+
+
+<hr>
+   <style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    
+}
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.Merah {
+  border: 4px solid red !important;
+  background-color: floralwhite;
+}
+.merah-span {
+  color: red;
+}
+
+.split-cell h3{
+  color: green;
+}
+.split-cell {
+  border: 5px dashed green;
+  padding: 15px;
+  background-color: #dff5df;
+  
+}
+
+.split-cell h2 {
+  color: green;
+}
+
+.split-cell table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.split-cell table td {
+  border: 2px solid green;
+  padding: 10px;
+  font-size: 16px;
+  background-color: white;
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: aqua;
+}
+th:nth-child(even) {
+  background-color: aqua;
+}
+
+.status-bawah {    
+  text-align: center;    
+  background-color: rgb(149, 152, 154);    
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Marge & Split</h2>
+
+<table>
+  <tr>
+    <th>Kategori Data</th>
+    <th>Field/Atribut</th>
+    <th>Keterangan/Hasil Input</th>
+  </tr>
+  
+  <tr>
+    <td rowspan="3" class="Merah">IDENTITAS PRIBADI<br>
+    <span class="merah-span">(Marge 3 Baris)</span>
+    </td>
+    <td>Nama:</td>
+    <td>Ainin Elok Rahmadani</td>
+  </tr>
+  
+  <tr>
+    <td>Alamat:</td>
+    <td>JL.Kitrunowongso RT 4 RW 1 Desa Ternyang </td>
+  </tr>
+ 
+  <tr>
+    <td>No.HP:</td>
+    <td>O812-3238-1281</td>
+  </tr>
+  
+  <tr>
+
+    <td>Akademik</td>
+    <td>Jurusan:</td>
+    <td>Rekayasa Perangkat Lunak (RPL)</td>
+  </tr>
+  
+  <tr>
+    <td>Preferensi</td>
+    <td>Jenis Kelamin:</td>
+    <td>Perempuan</td>
+  </tr>
+  
+  <tr>
+    <td>Data fisik</td>
+    <td>Pengukuran Badan:</td>
+    <td>
+      <div class="split-cell">
+        <h3>SPLIT CELL (Dipecah):</h3>
+      <table>
+        <tr>
+          <td>Tinggi: 160</td>
+        </tr>
+        <tr>
+          <td>Berat: 53 kg</td>
+        </tr>
+      </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>Lain-Lain</td>
+    <td>Hobi:</td>
+    <td>Main Game</td>
+  </tr>
+
+  
+
+  <tr>
+    <td colspan="3" class="status-bawah">Garis Merah=Area Marge Cell | Garis Hijau=Area Split Cell</td>
+  </tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+<hr>    
+   <style>    
+body {    
+    font-family: Arial, Helvetica, sans-serif;    
+    text-align: center;    
+        
+}    
+    table {    
+  font-family: arial, sans-serif;    
+  border-collapse: collapse;    
+  width: 100%;    
+}    
+    
+td, th {    
+  border: 1px solid #000000;    
+  text-align: left;    
+  padding: 8px;    
+}    
+th {    
+  background-color: rgb(16, 131, 238);   
+
+}    
+th:nth-child(even) {    
+  background-color: rgb(16, 131, 238);    
+}  
+.status-bawah {    
+  text-align: center;    
+  background-color: rgb(149, 152, 154);    
+}
+
+.hijau{
+  color: green;
+}
+  
+    
+</style>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Document</title>    
+</head>    
+<body>    
+    
+    <h2>Tantangan Tabel Kompleks => Marge (Merah) & Split (Hijau)    
+    
+    </h2>    
+    
+<table>    
+  <tr>    
+    <th>Kategori Utama</th>    
+    <th>Sub Kategori</th>    
+    <th>Atribut Isian</th>    
+    <th>Detail Data / Nilai</th>    
+  </tr>    
+      
+  <tr>    
+    <td rowspan="3" class="Merah">DATA SISWA<br>
+    <span class="merah-span">(Marge 3 Baris)</span>
+    </td>  
+    <td rowspan="2">Identitas Utama</td>    
+    <td>Nama Lengkap</td>    
+    <td>Ainin Elok Rahmadani</td>    
+  </tr>    
+      
+  <tr>    
+    <td>Alamat Rumah</td>    
+    <td>JL.Kitrunowongso Desa Ternyang </td>    
+  </tr>    
+     
+  <tr>    
+    <td colspan="2" class="Merah">Kontak Aktif: 0812-3238-1281
+    <span class="merah-span">(colspan 2)</span></td>
+    </td>  
+    <td>Hobi: Bermain Game</td>    
+  
+  </tr>    
+      
+  <tr>    
+    
+    <td>Akademik</td>    
+    <td>Jurusan PPLG</td>    
+    <td>Pilihan Kelas</td>    
+    <td>Rekayasa Perangkat Lunak (RPL)</td>    
+  </tr>    
+      
+  <tr>    
+    <td>Preferensi</td>    
+    <td>Gender</td>    
+    <td>Jenis Kelamin</td>    
+    <td>Perempuan</td>    
+  </tr>    
+      
+  <tr>    
+    <td>Antropometri</td>    
+    <td>Pengukuran Fisik</td>    
+    <td>Parameter Badan</td>    
+    <td>    
+      <div class="split-cell">
+        <h3>SPLIT CELL (Dipecah jadi 2 sub-sel):</h3>
+      <table>    
+        <tr>    
+          <td>Tinggi: 160</td>    
+        </tr>    
+        <tr>    
+          <td>Berat: 53 kg</td>    
+        </tr>    
+      </table>    
+    </td>    
+  </tr>    
+    
+      
+  <tr>    
+    <td colspan="4" class="status-bawah">Keterangan: Kotak bergaris <span class="merah-span">Merah</span> adalah hasil "Merge Cell**, sedangkan kotak bergaris <span class="hijau">Hijau</span> adalah simulasi "Split Cell**.</td>    
+  </tr>    
+</table>    
+    
+</body>    
+</html>
