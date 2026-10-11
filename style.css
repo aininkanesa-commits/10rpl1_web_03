@@ -185,3 +185,16 @@ margin-top: 18px;
 color: #6f737b;
 font-size: 10px;
 }
+
+.vercel {
+    background: #171717 !important;
+    color: white !important;
+}
+
+.vercel-logo {
+    width: 5px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1;
+    color: white;
+}
